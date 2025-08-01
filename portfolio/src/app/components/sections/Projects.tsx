@@ -26,8 +26,7 @@ export default function Projects(): JSX.Element {
       description:
         "Conception UI/UX complète d'une application mobile dédiée aux amateurs d'activités en plein air. Travail freelance privé, avec design soigné et parcours utilisateur intuitif.",
       tech: ["Figma", "User Flow", "UI/UX", "Mobile Design"],
-      image:
-        "https://i.ibb.co/NgHqgmk3/black-white-man-shadow-with-light-gleam.jpg",
+      image: "https://i.ibb.co/SXdP0krw/image.png",
       //   githubUrl: "https://github.com", // or leave blank if private
       delay: "0.2s",
     },
@@ -37,7 +36,7 @@ export default function Projects(): JSX.Element {
         "Application d'événementiel en temps réel développée lors d’un hackathon. Front-end avec React et conception UI sur Figma, mettant l’accent sur l’interaction live et la collaboration.",
       tech: ["React", "Figma", "UI Design", "Real-Time"],
       image:
-        "https://i.ibb.co/NgHqgmk3/black-white-man-shadow-with-light-gleam.jpg",
+        "https://i.ibb.co/fdCG9Kx8/Screen-Shot-2025-08-01-at-6-59-28-PM.png",
       //   githubUrl: "https://github.com", // update if you want to include it
       delay: "0.4s",
     },
@@ -46,8 +45,7 @@ export default function Projects(): JSX.Element {
       description:
         "Application web full-stack développée avec Next.js (frontend), Fastify (backend), et SQLite3 pour la base de données. Design moderne avec Tailwind CSS.",
       tech: ["Next.js", "Fastify", "SQLite3", "Tailwind CSS"],
-      image:
-        "https://i.ibb.co/NgHqgmk3/black-white-man-shadow-with-light-gleam.jpg",
+      image: "https://i.ibb.co/wh3dyfCR/ai-ping.jpg",
       githubUrl: "https://github.com/Achraflaalalma/ft_transendence", // update with your repo if available
       delay: "0.6s",
     },
@@ -57,7 +55,7 @@ export default function Projects(): JSX.Element {
         "Implémentation complète d’un serveur HTTP à partir de zéro en C++98. Projet système avancé de l’école 1337, avec gestion des requêtes, réponses, et protocoles réseau.",
       tech: ["C++98", "HTTP", "Sockets", "System Programming"],
       image:
-        "https://i.ibb.co/NgHqgmk3/black-white-man-shadow-with-light-gleam.jpg",
+        "https://i.ibb.co/KcZ472Wm/Lucid-Origin-A-stylized-illustration-of-a-futuristic-HTTP-serv-0.jpg",
       githubUrl: "https://github.com/bablilayoub/webserv", // add your repo if public
       delay: "0.8s",
     },

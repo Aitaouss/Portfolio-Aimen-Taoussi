@@ -259,10 +259,10 @@ html {
   background: linear-gradient(
     135deg,
     #180202 0% /* Darker red - changed from #dc2626 */,
-    #1d0909 25% /* Darker red - changed from #991b1b */,
+    #040000 25% /* Darker red - changed from #991b1b */,
     #1e0202 50% /* Darker red - changed from #7f1d1d */,
     #180404 75%,
-    #320c0c 100%
+    #0a0101 100%
   );
 }
 
