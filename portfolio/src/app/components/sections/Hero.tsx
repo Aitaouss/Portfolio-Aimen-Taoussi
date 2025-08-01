@@ -103,7 +103,7 @@ export default function Hero(): JSX.Element {
                 className="btn-modern border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
                 asChild
               >
-                <a href="/resume.pdf" download>
+                <a href="Aimen-Taoussi-CV.pdf" download>
                   <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Download CV
                 </a>
