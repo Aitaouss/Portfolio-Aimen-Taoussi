@@ -14,6 +14,8 @@ pnpm dev
 bun dev
 ```
 
+![Portfolio Preview](https://i.ibb.co/VdrsNdh/Screen-Shot-2025-08-02-at-11-51-40-AM.png)
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
