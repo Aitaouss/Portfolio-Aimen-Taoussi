@@ -219,7 +219,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     135deg,
-    #991b1b,
+    #881b99,
     #7f1d1d
   ); /* Even darker on hover */
 }
@@ -258,9 +258,9 @@ html {
 .gradient-red-black {
   background: linear-gradient(
     135deg,
-    #180202 0% /* Darker red - changed from #dc2626 */,
+    #0c0218 0% /* Darker red - changed from #dc2626 */,
     #040000 25% /* Darker red - changed from #991b1b */,
-    #1e0202 50% /* Darker red - changed from #7f1d1d */,
+    #0b021e 50% /* Darker red - changed from #7f1d1d */,
     #180404 75%,
     #0a0101 100%
   );
@@ -269,9 +269,9 @@ html {
 .gradient-red {
   background: linear-gradient(
     135deg,
-    #b91c1c 0%,
-    #991b1b 50%,
-    #7f1d1d 100%
+    #701cb9 0%,
+    #801b99 50%,
+    #7f1d7c 100%
   ); /* All darker reds */
 }
 
@@ -298,7 +298,7 @@ html {
 .card-modern:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-    0 0 30px rgba(185, 28, 28, 0.15); /* Darker red glow - changed from #ef4444 */
+    0 0 30px rgba(77, 9, 94, 0.15); /* Darker red glow - changed from #ef4444 */
 }
 
 /* Button animations */

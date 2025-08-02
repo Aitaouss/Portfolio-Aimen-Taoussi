@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { useState } from "react";
 import type { JSX } from "react/jsx-runtime";
+import Image from "next/image";
 
 export default function Header(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,9 +30,16 @@ export default function Header(): JSX.Element {
         <nav className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent text-white">
+            <Image
+              width={50}
+              height={50}
+              src="https://i.ibb.co/yc5b56nT/Screen-Shot-2025-04-14-at-2-04-44-AM-removebg-preview.png"
+              alt="Logo"
+              className="rounded-full"
+            />
+            {/* <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent text-white">
               Aimen Taoussi
-            </h1>
+            </h1> */}
           </div>
 
           {/* Desktop Navigation */}
