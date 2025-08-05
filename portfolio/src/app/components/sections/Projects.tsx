@@ -59,6 +59,17 @@ export default function Projects(): JSX.Element {
       githubUrl: "https://github.com/bablilayoub/webserv", // add your repo if public
       delay: "0.8s",
     },
+    {
+      title: "Ebazaar – Online Marketplace Platform",
+      description:
+        "Ebazaar est une plateforme de marché en ligne inspirée de Fiverr, où les vendeurs peuvent créer leurs propres boutiques personnalisées et vendre des services ou produits numériques. Les acheteurs peuvent parcourir les bazars, commander et évaluer.",
+      tech: ["Next.js", "TailwindCSS", "Fastify", "SQLite3"],
+      image:
+        "https://i.ibb.co/XfBP8TLt/Screen-Shot-2025-08-05-at-1-09-18-PM-3.png",
+      githubUrl: "https://github.com/REDX-at/Ebazaar", // replace with your actual repo
+      delay: "0.6s",
+      liveUrl: "https://ebazaar-beta.vercel.app/", // replace with your live demo URL
+    },
   ];
 
   return (
