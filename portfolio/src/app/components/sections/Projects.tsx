@@ -46,7 +46,7 @@ export default function Projects(): JSX.Element {
         "Application web full-stack développée avec Next.js (frontend), Fastify (backend), et SQLite3 pour la base de données. Design moderne avec Tailwind CSS.",
       tech: ["Next.js", "Fastify", "SQLite3", "Tailwind CSS"],
       image: "https://i.ibb.co/wh3dyfCR/ai-ping.jpg",
-      githubUrl: "https://github.com/Achraflaalalma/ft_transendence", // update with your repo if available
+      // githubUrl: "https://github.com/Achraflaalalma/ft_transendence", // update with your repo if available
       delay: "0.6s",
     },
     {
