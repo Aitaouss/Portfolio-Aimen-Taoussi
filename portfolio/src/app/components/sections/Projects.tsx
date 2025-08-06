@@ -17,6 +17,7 @@ interface Project {
   githubUrl?: string;
   liveUrl?: string;
   delay: string;
+  figmaUrl?: string;
 }
 
 export default function Projects(): JSX.Element {
@@ -28,7 +29,21 @@ export default function Projects(): JSX.Element {
       tech: ["Figma", "User Flow", "UI/UX", "Mobile Design"],
       image: "https://i.ibb.co/SXdP0krw/image.png",
       //   githubUrl: "https://github.com", // or leave blank if private
+      figmaUrl:
+        "https://figma.com/design/w42erVqe3ZmBFYfWVXFa72/Outdoorpal?node-id=0-1&p=f&t=J2vkgaLfmGXxE1bB-0",
       delay: "0.2s",
+    },
+    {
+      title: "Old Portfolio – React & Tailwind",
+      description:
+        "Ancienne version de mon portfolio réalisée avec React et Tailwind CSS. Présentation simple et moderne de mes projets, avec un design responsive et une navigation fluide.",
+      tech: ["React", "Tailwind CSS", "Responsive Design"],
+      image: "https://i.ibb.co/BHjKMM6w/background-for-portfol.png", // remplace avec le bon lien si nécessaire
+      // githubUrl: "https://github.com/yourusername/old-portfolio", // optionnel
+      figmaUrl:
+        "https://www.figma.com/design/1vWwAsbJuJTYhW0TU7hK9I/Untitled?node-id=0-1&p=f&t=VQI2fzLdN8OoB7wz-0", // remplace avec ton lien réel
+      liveUrl: "https://aitaoussold.vercel.app/",
+      delay: "0.3s",
     },
     {
       title: "IntraEvent – Hackathon 1337",
@@ -38,6 +53,8 @@ export default function Projects(): JSX.Element {
       image:
         "https://i.ibb.co/fdCG9Kx8/Screen-Shot-2025-08-01-at-6-59-28-PM.png",
       //   githubUrl: "https://github.com", // update if you want to include it
+      figmaUrl:
+        "https://www.figma.com/design/bo31ljsMZPXhO2uVBI8MI6/Untitled?t=OBwi5Yv7DDqprCsi-0",
       delay: "0.4s",
     },
     {
@@ -160,6 +177,23 @@ export default function Projects(): JSX.Element {
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
+                      </a>
+                    </Button>
+                  )}
+                  {project.figmaUrl && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="btn-modern border-gray-700 text-gray-300 hover:border-red-500 hover:text-red-400 flex-1 bg-transparent"
+                      asChild
+                    >
+                      <a
+                        href={project.figmaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Figma Design
                       </a>
                     </Button>
                   )}
