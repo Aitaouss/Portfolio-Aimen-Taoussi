@@ -111,7 +111,7 @@ export default function Header(): JSX.Element {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 w-full glass-dark border-b border-red-500/20">
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-4 bg-black bg-opacity-65">
               {navItems.map((item) => (
                 <button
                   key={item.id}
