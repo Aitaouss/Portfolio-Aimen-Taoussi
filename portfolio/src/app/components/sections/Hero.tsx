@@ -7,7 +7,7 @@ import type { JSX } from "react";
 
 export default function Hero(): JSX.Element {
   return (
-    <section className="min-h-screen flex items-center justify-center gradient-red-black relative overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+    <section className="min-h-screen flex items-center justify-center gradient-red-black relative overflow-hidden pt-10 sm:pt-24 lg:pt-0">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-500/10 rounded-full blur-3xl animate-float"></div>
