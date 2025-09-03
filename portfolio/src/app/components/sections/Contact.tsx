@@ -112,7 +112,7 @@ export default function Contact(): JSX.Element {
             asChild
           >
             <a
-              href="https://github.com/Redx-at"
+              href="https://github.com/aitaouss"
               target="_blank"
               rel="noopener noreferrer"
             >

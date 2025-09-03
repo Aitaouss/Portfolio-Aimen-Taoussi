@@ -64,7 +64,7 @@ export default function Header(): JSX.Element {
               asChild
             >
               <a
-                href="https://github.com"
+                href="https://github.com/aitaouss"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -78,7 +78,7 @@ export default function Header(): JSX.Element {
               asChild
             >
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/aimen-taoussi/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -129,7 +129,7 @@ export default function Header(): JSX.Element {
                   asChild
                 >
                   <a
-                    href="https://github.com"
+                    href="https://github.com/aitaouss"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -144,7 +144,7 @@ export default function Header(): JSX.Element {
                   asChild
                 >
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/aimen-taoussi/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
