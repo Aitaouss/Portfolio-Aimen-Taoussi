@@ -96,7 +96,7 @@ export default function Contact(): JSX.Element {
             asChild
           >
             <a
-              href="https://www.linkedin.com/in/aimen-taoussi-251684280/"
+              href="https://www.linkedin.com/in/aimen-taoussi/"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -23,7 +23,7 @@ export default function Hero(): JSX.Element {
           <div className="mb-8 sm:mb-12 relative z-20">
             <div className="relative inline-block">
               <img
-                src="https://i.ibb.co/Q7Pz9NcD/Me-Portfolio.png"
+                src="/AImenTaoussi.png"
                 alt="Aimen Taoussi"
                 className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-red-500 shadow-2xl animate-glow relative z-20"
               />
