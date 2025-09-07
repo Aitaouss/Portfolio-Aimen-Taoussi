@@ -86,6 +86,8 @@ export default function Projects(): JSX.Element {
       githubUrl: "https://github.com/REDX-at/Ebazaar", // replace with your actual repo
       delay: "0.6s",
       liveUrl: "https://ebazaar-beta.vercel.app/", // replace with your live demo URL
+      figmaUrl:
+        "https://www.figma.com/design/NT5x75Gx6wLGd0X6jwbzxm/eBazaar?node-id=0-1&t=6DwEmLus3Fml99ex-1",
     },
   ];
 
