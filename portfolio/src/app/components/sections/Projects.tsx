@@ -25,7 +25,7 @@ export default function Projects(): JSX.Element {
     {
       title: "Outdoorpal – UI/UX Mobile App",
       description:
-        "Conception UI/UX complète d'une application mobile dédiée aux amateurs d'activités en plein air. Travail freelance privé, avec design soigné et parcours utilisateur intuitif.",
+        "Complete UI/UX design for a mobile application dedicated to outdoor activity enthusiasts. Private freelance work, featuring a polished design and intuitive user journey.",
       tech: ["Figma", "User Flow", "UI/UX", "Mobile Design"],
       image: "https://i.ibb.co/SXdP0krw/image.png",
       //   githubUrl: "https://github.com", // or leave blank if private
@@ -36,19 +36,19 @@ export default function Projects(): JSX.Element {
     {
       title: "Old Portfolio – React & Tailwind",
       description:
-        "Ancienne version de mon portfolio réalisée avec React et Tailwind CSS. Présentation simple et moderne de mes projets, avec un design responsive et une navigation fluide.",
+        "Previous version of my portfolio built with React and Tailwind CSS. Simple and modern presentation of my projects, with a responsive design and smooth navigation.",
       tech: ["React", "Tailwind CSS", "Responsive Design"],
-      image: "https://i.ibb.co/BHjKMM6w/background-for-portfol.png", // remplace avec le bon lien si nécessaire
-      // githubUrl: "https://github.com/yourusername/old-portfolio", // optionnel
+      image: "https://i.ibb.co/BHjKMM6w/background-for-portfol.png", // replace with the correct link if needed
+      // githubUrl: "https://github.com/yourusername/old-portfolio", // optional
       figmaUrl:
-        "https://www.figma.com/design/1vWwAsbJuJTYhW0TU7hK9I/Untitled?node-id=0-1&p=f&t=VQI2fzLdN8OoB7wz-0", // remplace avec ton lien réel
+        "https://www.figma.com/design/1vWwAsbJuJTYhW0TU7hK9I/Untitled?node-id=0-1&p=f&t=VQI2fzLdN8OoB7wz-0", // replace with your real link
       liveUrl: "https://aitaoussold.vercel.app/",
       delay: "0.3s",
     },
     {
       title: "IntraEvent – Hackathon 1337",
       description:
-        "Application d'événementiel en temps réel développée lors d’un hackathon. Front-end avec React et conception UI sur Figma, mettant l’accent sur l’interaction live et la collaboration.",
+        "Real-time event management application developed during a hackathon. Front-end with React and UI design on Figma, focusing on live interaction and collaboration.",
       tech: ["React", "Figma", "UI Design", "Real-Time"],
       image:
         "https://i.ibb.co/fdCG9Kx8/Screen-Shot-2025-08-01-at-6-59-28-PM.png",
@@ -60,7 +60,7 @@ export default function Projects(): JSX.Element {
     {
       title: "ft_transcendence – Full-Stack Web App",
       description:
-        "Application web full-stack développée avec Next.js (frontend), Fastify (backend), et SQLite3 pour la base de données. Design moderne avec Tailwind CSS.",
+        "Full-stack web application developed with Next.js (frontend), Fastify (backend), and SQLite3 for the database. Modern design with Tailwind CSS.",
       tech: ["Next.js", "Fastify", "SQLite3", "Tailwind CSS"],
       image: "https://i.ibb.co/wh3dyfCR/ai-ping.jpg",
       // githubUrl: "https://github.com/Achraflaalalma/ft_transendence", // update with your repo if available
@@ -69,7 +69,7 @@ export default function Projects(): JSX.Element {
     {
       title: "webserv – HTTP Server in C++",
       description:
-        "Implémentation complète d’un serveur HTTP à partir de zéro en C++98. Projet système avancé de l’école 1337, avec gestion des requêtes, réponses, et protocoles réseau.",
+        "Complete implementation of an HTTP server from scratch in C++98. Advanced system project at 1337 school, handling requests, responses, and network protocols.",
       tech: ["C++98", "HTTP", "Sockets", "System Programming"],
       image:
         "https://i.ibb.co/KcZ472Wm/Lucid-Origin-A-stylized-illustration-of-a-futuristic-HTTP-serv-0.jpg",
@@ -79,7 +79,7 @@ export default function Projects(): JSX.Element {
     {
       title: "Ebazaar – Online Marketplace Platform",
       description:
-        "Ebazaar est une plateforme de marché en ligne inspirée de Fiverr, où les vendeurs peuvent créer leurs propres boutiques personnalisées et vendre des services ou produits numériques. Les acheteurs peuvent parcourir les bazars, commander et évaluer.",
+        "Ebazaar is an online marketplace platform inspired by Fiverr, where sellers can create their own custom shops and sell digital services or products. Buyers can browse bazaars, order, and review.",
       tech: ["Next.js", "TailwindCSS", "Fastify", "SQLite3"],
       image:
         "https://i.ibb.co/XfBP8TLt/Screen-Shot-2025-08-05-at-1-09-18-PM-3.png",

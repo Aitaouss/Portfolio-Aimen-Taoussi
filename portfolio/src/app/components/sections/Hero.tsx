@@ -55,7 +55,7 @@ export default function Hero(): JSX.Element {
               </div>
               <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
                 <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
-                <span>Looking for Internship</span>
+                <span>Open to Work Opportunities</span>
               </div>
             </div>
 
