@@ -19,6 +19,14 @@ export const metadata: Metadata = {
     "42 School",
   ],
   authors: [{ name: "Aimen Taoussi" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/AImenTaoussi.png", type: "image/png" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/AImenTaoussi.png",
+  },
   openGraph: {
     title: "Aimen Taoussi - Full-Stack Developer & Designer",
     description:

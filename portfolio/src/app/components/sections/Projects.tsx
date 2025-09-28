@@ -89,6 +89,22 @@ export default function Projects(): JSX.Element {
       figmaUrl:
         "https://www.figma.com/design/NT5x75Gx6wLGd0X6jwbzxm/eBazaar?node-id=0-1&t=6DwEmLus3Fml99ex-1",
     },
+    {
+      title: "Maghreb Grillage – Modern Website",
+      description:
+        "Modern website for Maghreb Grillage company built with Next.js 14 and TypeScript. Features a responsive design with Tailwind CSS and modern UI components using Shadcn/UI for an optimal user experience.",
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn/UI",
+        "Lucide React",
+      ],
+      image: "https://i.ibb.co/kgb6wDhc/image.png",
+      githubUrl: "https://github.com/Aitaouss/Maghrebgrillage-Website",
+      liveUrl: "https://maghrebgrillage.vercel.app/",
+      delay: "0.7s",
+    },
   ];
 
   return (
