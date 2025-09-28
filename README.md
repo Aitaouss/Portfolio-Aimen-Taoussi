@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-![Portfolio Preview](https://i.ibb.co/VdrsNdh/Screen-Shot-2025-08-02-at-11-51-40-AM.png)
+![Portfolio Preview]([https://i.ibb.co/VdrsNdh/Screen-Shot-2025-08-02-at-11-51-40-AM.png](https://i.ibb.co/j9Bkj9sV/me-website.png))
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
