@@ -105,6 +105,16 @@ export default function Projects(): JSX.Element {
       liveUrl: "https://maghrebgrillage.vercel.app/",
       delay: "0.7s",
     },
+    {
+      title: "aioxagent – Enterprise AI Agents",
+      description:
+        "Modern website design for aioxagent, an enterprise AI platform serving Web3 communities. Showcases features like instant Q&A, onboarding flows, community moderation, analytics, and multi-language support, with a polished UI and intuitive user journey.",
+      tech: ["vite.js", "Tailwind CSS", "AI Integration", "Web3"],
+      image: "https://i.ibb.co/fg0Cs7f/aioxagent.png", // Replace with actual screenshot/logo
+      // githubUrl: "", // leave blank if not public
+      liveUrl: "https://www.aioxagent.com/",
+      delay: "0.2s",
+    },
   ];
 
   return (
