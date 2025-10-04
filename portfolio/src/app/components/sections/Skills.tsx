@@ -14,31 +14,31 @@ interface SkillCategory {
 export default function Skills(): JSX.Element {
   const skillCategories: SkillCategory[] = [
     {
-      icon: <Globe className="w-8 h-8 text-orange-400" />,
+      icon: <Globe className="w-8 h-8 text-white" />,
       title: "Frontend",
       skills: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
-      color: "text-orange-400",
+      color: "text-white",
       delay: "0.2s",
     },
     {
-      icon: <Server className="w-8 h-8 text-green-400" />,
+      icon: <Server className="w-8 h-8 text-gray-300" />,
       title: "Backend",
       skills: ["Node.js", "Express", "Fastify"],
-      color: "text-green-400",
+      color: "text-gray-300",
       delay: "0.4s",
     },
     {
-      icon: <Database className="w-8 h-8 text-blue-400" />,
+      icon: <Database className="w-8 h-8 text-gray-400" />,
       title: "Database",
       skills: ["MariaDB", "PostgreSQL", "SQLite3"],
-      color: "text-blue-400",
+      color: "text-gray-400",
       delay: "0.6s",
     },
     {
-      icon: <Palette className="w-8 h-8 text-purple-400" />,
+      icon: <Palette className="w-8 h-8 text-gray-500" />,
       title: "Design",
       skills: ["Graphic Design", "UI/UX Design", "Adobe Creative Suite"],
-      color: "text-purple-400",
+      color: "text-gray-500",
       delay: "0.8s",
     },
   ];
@@ -46,7 +46,7 @@ export default function Skills(): JSX.Element {
   return (
     <section
       id="skills"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 gradient-dark"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
@@ -66,12 +66,14 @@ export default function Skills(): JSX.Element {
           {skillCategories.map((category, index) => (
             <Card
               key={index}
-              className="card-modern bg-gray-900 border-gray-800 hover:border-red-500/50 animate-slide-up"
+              className="!bg-white/10 bg-gray-900 border-gray-800 hover:border-white/50 animate-slide-up"
               style={{ animationDelay: category.delay }}
             >
               <CardHeader className="text-center pb-4">
                 <div className="flex justify-center mb-4">{category.icon}</div>
-                <CardTitle className={`text-lg sm:text-xl ${category.color}`}>
+                <CardTitle
+                  className={`text-lg sm:text-xl !text-white ${category.color}`}
+                >
                   {category.title}
                 </CardTitle>
               </CardHeader>
@@ -81,7 +83,7 @@ export default function Skills(): JSX.Element {
                     <Badge
                       key={skill}
                       variant="secondary"
-                      className="bg-gray-800 text-gray-300 hover:bg-red-500 hover:text-white transition-colors text-xs sm:text-sm"
+                      className="bg-gray-800 text-gray-300 hover:bg-white hover:text-black transition-colors text-xs sm:text-sm"
                     >
                       {skill}
                     </Badge>

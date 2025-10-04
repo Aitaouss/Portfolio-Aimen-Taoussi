@@ -10,9 +10,9 @@ export default function Hero(): JSX.Element {
     <section className="min-h-screen flex items-center justify-center gradient-red-black relative overflow-hidden pt-10 sm:pt-24 lg:pt-0">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-red-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
         <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-red-600/5 rounded-full blur-3xl animate-float"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-float"
           style={{ animationDelay: "1s" }}
         ></div>
       </div>
@@ -25,9 +25,9 @@ export default function Hero(): JSX.Element {
               <img
                 src="/AImenTaoussi.png"
                 alt="Aimen Taoussi"
-                className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-red-500 shadow-2xl animate-glow relative z-20"
+                className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-white shadow-2xl animate-glow relative z-20"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-red-500/20 to-transparent z-10"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-transparent z-10"></div>
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default function Hero(): JSX.Element {
             </h1>
 
             <p
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-red-200 mb-4 sm:mb-6 lg:mb-8 animate-slide-up"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 mb-4 sm:mb-6 lg:mb-8 animate-slide-up"
               style={{ animationDelay: "0.2s" }}
             >
               Full-Stack Developer & UI/UX Designer
@@ -50,11 +50,11 @@ export default function Hero(): JSX.Element {
               style={{ animationDelay: "0.4s" }}
             >
               <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
-                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span>1337 - 42 School Student</span>
               </div>
               <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
-                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-red-400" />
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 <span>Open to Work Opportunities</span>
               </div>
             </div>
@@ -65,15 +65,15 @@ export default function Hero(): JSX.Element {
               style={{ animationDelay: "0.6s" }}
             >
               Passionate full-stack developer with{" "}
-              <span className="text-red-400 font-semibold">
+              <span className="text-white font-semibold">
                 2 years of development experience
               </span>
               ,{" "}
-              <span className="text-red-400 font-semibold">
+              <span className="text-white font-semibold">
                 4 years in graphic design
               </span>
               , and{" "}
-              <span className="text-red-400 font-semibold">
+              <span className="text-white font-semibold">
                 2 years in UI/UX design
               </span>
               . I create beautiful, functional digital experiences from concept
@@ -87,7 +87,7 @@ export default function Hero(): JSX.Element {
             >
               <Button
                 size="lg"
-                className="btn-modern bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto w-full sm:w-auto"
+                className="btn-modern bg-black hover:bg-gray-800 text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto w-full sm:w-auto"
                 onClick={() =>
                   document
                     .getElementById("projects")
@@ -100,7 +100,7 @@ export default function Hero(): JSX.Element {
               <Button
                 variant="outline"
                 size="lg"
-                className="btn-modern border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
+                className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
                 asChild
               >
                 <a href="Aimen-Taoussi-CV.pdf" download>
@@ -115,8 +115,8 @@ export default function Hero(): JSX.Element {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10 hidden sm:block">
-        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-red-400 rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-red-400 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex justify-center">
+          <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -25,20 +25,18 @@ function ExperienceCard({
 }: ExperienceCardProps): JSX.Element {
   return (
     <Card
-      className="card-modern bg-gray-900 border-gray-800 hover:border-red-500/50 animate-slide-up"
+      className="!bg-white/10 !text-white border-gray-800 hover:border-white/50 animate-slide-up"
       style={{ animationDelay: delay }}
     >
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">{icon}</div>
-        <CardTitle className="text-white text-xl sm:text-2xl">
-          {title}
-        </CardTitle>
-        <CardDescription className="text-red-400 font-semibold text-sm sm:text-base">
+        <CardTitle className=" text-xl sm:text-2xl">{title}</CardTitle>
+        <CardDescription className=" font-semibold text-sm sm:text-base">
           {duration}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-300 text-center leading-relaxed text-sm sm:text-base">
+        <p className="!text-white/80 text-center leading-relaxed text-sm sm:text-base">
           {description}
         </p>
       </CardContent>
@@ -49,7 +47,7 @@ function ExperienceCard({
 export default function About(): JSX.Element {
   const experiences = [
     {
-      icon: <Code className="w-12 h-12 sm:w-16 sm:h-16 text-green-400" />,
+      icon: <Code className="w-12 h-12 sm:w-16 sm:h-16 text-white" />,
       title: "Development",
       duration: "2 Years Experience",
       description:
@@ -57,7 +55,7 @@ export default function About(): JSX.Element {
       delay: "0.2s",
     },
     {
-      icon: <Palette className="w-12 h-12 sm:w-16 sm:h-16 text-purple-400" />,
+      icon: <Palette className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400" />,
       title: "Graphic Design",
       duration: "4 Years Experience",
       description:
@@ -65,7 +63,7 @@ export default function About(): JSX.Element {
       delay: "0.4s",
     },
     {
-      icon: <Layers className="w-12 h-12 sm:w-16 sm:h-16 text-red-400" />,
+      icon: <Layers className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" />,
       title: "UI/UX Design",
       duration: "2 Years Experience",
       description:

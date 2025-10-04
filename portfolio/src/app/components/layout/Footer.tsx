@@ -11,7 +11,7 @@ export default function Footer(): JSX.Element {
               href="https://github.com/Redx-at"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-red-400 transition-colors duration-300"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Github className="w-6 h-6" />
             </a>
@@ -19,13 +19,13 @@ export default function Footer(): JSX.Element {
               href="https://www.linkedin.com/in/aimen-taoussi-251684280/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-red-400 transition-colors duration-300"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:taoussi.aimen@gmail.com"
-              className="text-gray-400 hover:text-red-400 transition-colors duration-300"
+              className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Mail className="w-6 h-6" />
             </a>
@@ -35,7 +35,7 @@ export default function Footer(): JSX.Element {
           <div className="text-center">
             <p className="text-gray-400 text-sm sm:text-base flex items-center justify-center gap-2">
               © {new Date().getFullYear()} Aimen Taoussi. Made with{" "}
-              <Heart className="w-4 h-4 text-red-500 fill-current" /> using
+              <Heart className="w-4 h-4 text-white fill-current" /> using
               Next.js & TypeScript
             </p>
           </div>

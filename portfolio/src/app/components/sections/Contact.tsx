@@ -5,13 +5,13 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 gradient-red-black relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-red-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
         <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-red-600/5 rounded-full blur-3xl animate-float"
+          className="absolute bottom-20 left-10 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-float"
           style={{ animationDelay: "1s" }}
         ></div>
       </div>
@@ -22,30 +22,30 @@ export default function Contact(): JSX.Element {
             Let's Work Together
           </h2>
           <p
-            className="text-gray-200 max-w-3xl mx-auto text-base sm:text-lg lg:text-xl leading-relaxed animate-slide-up"
+            className="text-gray-200 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             I'm currently looking for internship opportunities where I can
             contribute my skills in{" "}
-            <span className="text-red-400 font-semibold">
+            <span className="text-white font-semibold">
               full-stack development
             </span>{" "}
-            and <span className="text-red-400 font-semibold">design</span>.
-            Let's create something amazing together!
+            and <span className="text-white font-semibold">design</span>. Let's
+            create something amazing together!
           </p>
         </div>
 
         {/* Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <div
-            className="glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
+            className=" glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
             style={{ animationDelay: "0.4s" }}
           >
-            <Mail className="w-8 h-8 sm:w-12 sm:h-12 text-red-400 mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-xl mb-2">
+            <Mail className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
+            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
               Email
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base">
+            <p className="text-gray-300 text-xs sm:text-sm">
               taoussi.aimen@gmail.com
             </p>
           </div>
@@ -54,22 +54,22 @@ export default function Contact(): JSX.Element {
             className="glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
             style={{ animationDelay: "0.6s" }}
           >
-            <MapPin className="w-8 h-8 sm:w-12 sm:h-12 text-red-400 mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-xl mb-2">
+            <MapPin className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
+            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
               Location
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base">Morocco</p>
+            <p className="text-gray-300 text-xs sm:text-sm">Morocco</p>
           </div>
 
           <div
             className="glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
             style={{ animationDelay: "0.8s" }}
           >
-            <Phone className="w-8 h-8 sm:w-12 sm:h-12 text-red-400 mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-xl mb-2">
+            <Phone className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
+            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
               Available
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base">For Internship</p>
+            <p className="text-gray-300 text-xs sm:text-sm">For Internship</p>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ export default function Contact(): JSX.Element {
         >
           <Button
             size="lg"
-            className="btn-modern bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-4 text-base sm:text-lg h-auto"
+            className="btn-modern bg-white hover:bg-gray-200 text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto"
             asChild
           >
             <a href="mailto:taoussi.aimen@gmail.com">
@@ -92,7 +92,7 @@ export default function Contact(): JSX.Element {
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-semibold px-8 py-4 text-base sm:text-lg h-auto bg-transparent"
+            className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto bg-transparent"
             asChild
           >
             <a
@@ -108,7 +108,7 @@ export default function Contact(): JSX.Element {
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-red-500 text-red-400 hover:bg-red-500 hover:text-white font-semibold px-8 py-4 text-base sm:text-lg h-auto bg-transparent"
+            className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto bg-transparent"
             asChild
           >
             <a

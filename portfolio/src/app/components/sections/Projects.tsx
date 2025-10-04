@@ -140,7 +140,7 @@ export default function Projects(): JSX.Element {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="card-modern bg-gray-900 border-gray-800 hover:border-red-500/50 overflow-hidden group animate-slide-up"
+              className="card-modern bg-gray-900 border-gray-800 hover:border-white/50 overflow-hidden group animate-slide-up"
               style={{ animationDelay: project.delay }}
             >
               <div className="aspect-video overflow-hidden relative">
@@ -153,7 +153,7 @@ export default function Projects(): JSX.Element {
               </div>
 
               <CardHeader className="pb-4">
-                <CardTitle className="text-white text-lg sm:text-xl group-hover:text-red-400 transition-colors">
+                <CardTitle className="text-white text-lg sm:text-xl group-hover:text-gray-300 transition-colors">
                   {project.title}
                 </CardTitle>
                 <CardDescription className="text-gray-400 text-sm sm:text-base leading-relaxed">
@@ -167,7 +167,7 @@ export default function Projects(): JSX.Element {
                     <Badge
                       key={tech}
                       variant="outline"
-                      className="text-xs border-gray-700 text-gray-300 hover:border-red-500 hover:text-red-400 transition-colors"
+                      className="text-xs border-gray-700 text-gray-300 hover:border-white hover:text-white transition-colors"
                     >
                       {tech}
                     </Badge>
@@ -179,7 +179,7 @@ export default function Projects(): JSX.Element {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="btn-modern border-gray-700 text-gray-300 hover:border-red-500 hover:text-red-400 flex-1 bg-transparent"
+                      className="btn-modern border-gray-700 text-gray-300 hover:border-white hover:text-black flex-1 bg-transparent"
                       asChild
                     >
                       <a
@@ -195,7 +195,7 @@ export default function Projects(): JSX.Element {
                   {project.liveUrl && (
                     <Button
                       size="sm"
-                      className="btn-modern bg-red-500 hover:bg-red-600 text-white flex-1"
+                      className="btn-modern bg-white hover:bg-gray-200 text-black flex-1"
                       asChild
                     >
                       <a
@@ -212,7 +212,7 @@ export default function Projects(): JSX.Element {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="btn-modern border-gray-700 text-gray-300 hover:border-red-500 hover:text-red-400 flex-1 bg-transparent"
+                      className=" btn-modern border-gray-700 text-gray-300 hover:border-white hover:text-black flex-1 bg-transparent"
                       asChild
                     >
                       <a
