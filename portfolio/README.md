@@ -6,7 +6,7 @@ Welcome to my personal portfolio, built with [Next.js](https://nextjs.org). It s
 
 Check out the portfolio live: [https://aitaouss.me](https://aitaouss.me)
 
-![Portfolio Preview](https://i.ibb.co/j9Bkj9sV/me-website.png)
+![Portfolio Preview](https://i.ibb.co/tpLcdvhh/image.png)
 
 ## Getting Started
 
