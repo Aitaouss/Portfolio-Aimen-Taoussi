@@ -23,7 +23,7 @@ export default function Skills(): JSX.Element {
     {
       icon: <Server className="w-8 h-8 text-gray-300" />,
       title: "Backend",
-      skills: ["Node.js", "Express", "Fastify"],
+      skills: ["Node.js", "Express", "Fastify", "Nest js"],
       color: "text-gray-300",
       delay: "0.4s",
     },
