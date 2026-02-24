@@ -25,18 +25,17 @@ export default function Contact(): JSX.Element {
             className="text-gray-200 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            I'm currently looking for internship opportunities where I can
-            contribute my skills in{" "}
-            <span className="text-white font-semibold">
-              full-stack development
-            </span>{" "}
-            and <span className="text-white font-semibold">design</span>. Let's
-            create something amazing together!
+            Développeur full-stack avec une forte sensibilité au{" "}
+            <span className="text-white font-semibold">design UI/UX</span>. Je
+            conçois des applications web performantes et des interfaces
+            modernes, en alliant architecture robuste et expérience utilisateur
+            fluide. Passionné par l’innovation, je transforme des idées
+            complexes en produits digitaux élégants et efficaces.{" "}
           </p>
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <div
             className=" glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
             style={{ animationDelay: "0.4s" }}
@@ -60,19 +59,7 @@ export default function Contact(): JSX.Element {
             </h3>
             <p className="text-gray-300 text-xs sm:text-sm">Morocco</p>
           </div>
-
-          <div
-            className="glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
-            style={{ animationDelay: "0.8s" }}
-          >
-            <Phone className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
-              Available
-            </h3>
-            <p className="text-gray-300 text-xs sm:text-sm">For Internship</p>
-          </div>
         </div>
-
         {/* CTA Buttons */}
         <div
           className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 animate-slide-up"

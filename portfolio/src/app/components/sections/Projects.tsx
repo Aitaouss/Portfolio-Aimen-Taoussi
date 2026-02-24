@@ -115,6 +115,40 @@ export default function Projects(): JSX.Element {
       liveUrl: "https://www.aioxagent.com/",
       delay: "0.2s",
     },
+    {
+      title: "HSE SBU Manufacturing – Data & KPI Management Platform",
+      description:
+        "Enterprise HSE management platform for manufacturing environments. Enables structured data entry, visualization, and updates with advanced validation using DTOs and enums. Includes interactive dashboards for KPI tracking, site and period aggregation, admin panel with workflow supervision, and real-time notifications. Optimized frontend-heavy computations to improve backend performance and overall user experience.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "DTO Validation",
+        "RBAC",
+        "Data Aggregation",
+        "Interactive Dashboards",
+      ],
+      image:
+        "https://i.ibb.co/qYFvSNBx/Screenshot-from-2026-02-24-12-29-10.png", // replace with real screenshot
+      delay: "0.5s",
+      liveUrl: "https://hse-dashboard.1337.ma/",
+    },
+    {
+      title: "OCP Supply Chain – Production & Stock Management System",
+      description:
+        "Advanced supply chain management system for monitoring production flows and stock levels. Features drag-and-drop interfaces for vessel movement across workstations with strict data integrity control. Includes real-time operational dashboards, notification and alert management, frontend-based performance optimizations, and powerful reporting tools for data-driven decision making.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Drag-and-Drop UI",
+        "Real-Time Dashboards",
+        "Data Integrity",
+        "Reporting Tools",
+      ],
+      image:
+        "https://i.ibb.co/Z6ZxxtJZ/Screenshot-from-2026-02-24-12-42-14.png", // replace with real screenshot
+      delay: "0.6s",
+      liveUrl: "https://supply-chain.1337.ma/",
+    },
   ];
 
   return (
