@@ -118,10 +118,11 @@ export default function Projects(): JSX.Element {
     {
       title: "HSE SBU Manufacturing – Data & KPI Management Platform",
       description:
-        "Enterprise HSE management platform for manufacturing environments. Enables structured data entry, visualization, and updates with advanced validation using DTOs and enums. Includes interactive dashboards for KPI tracking, site and period aggregation, admin panel with workflow supervision, and real-time notifications. Optimized frontend-heavy computations to improve backend performance and overall user experience.",
+        "HSE SBU Manufacturing is a platform for managing HSE data, tracking KPIs, and supervising workflows, ensuring operational efficiency and compliance.",
       tech: [
         "Next.js",
         "TypeScript",
+        "Nest.js",
         "DTO Validation",
         "RBAC",
         "Data Aggregation",
@@ -135,10 +136,11 @@ export default function Projects(): JSX.Element {
     {
       title: "OCP Supply Chain – Production & Stock Management System",
       description:
-        "Advanced supply chain management system for monitoring production flows and stock levels. Features drag-and-drop interfaces for vessel movement across workstations with strict data integrity control. Includes real-time operational dashboards, notification and alert management, frontend-based performance optimizations, and powerful reporting tools for data-driven decision making.",
+        "OCP Supply Chain is a system for monitoring production flows, managing stock, and generating reports, enabling real-time operational decisions.",
       tech: [
         "Next.js",
         "TypeScript",
+        "Express.js",
         "Drag-and-Drop UI",
         "Real-Time Dashboards",
         "Data Integrity",
@@ -196,7 +198,7 @@ export default function Projects(): JSX.Element {
               </CardHeader>
 
               <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-between">
                   {project.tech.map((tech) => (
                     <Badge
                       key={tech}
