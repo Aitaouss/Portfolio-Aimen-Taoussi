@@ -54,8 +54,8 @@ export default function Hero(): JSX.Element {
                 <span>1337 - 42 School Student</span>
               </div>
               <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
-                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                <span>Open to Work Opportunities</span>
+                {/* <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-white" /> */}
+                <span>Software Engineer</span>
               </div>
             </div>
 
