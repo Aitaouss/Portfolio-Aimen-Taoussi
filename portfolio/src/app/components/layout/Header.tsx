@@ -27,46 +27,44 @@ export default function Header(): JSX.Element {
   return (
     <header className="fixed top-0 w-full z-50 glass-dark border-b border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+        <nav className="grid grid-cols-2 lg:grid-cols-3 items-center h-16 lg:h-20">
+          {/* Logo (Left column) */}
+          <div className="flex items-center justify-start">
             <Image
-              width={50}
-              height={50}
+              width={46}
+              height={46}
               src="https://i.ibb.co/yc5b56nT/Screen-Shot-2025-04-14-at-2-04-44-AM-removebg-preview.png"
               alt="Logo"
               className="rounded-full"
             />
-            {/* <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent text-white">
-              Aimen Taoussi
-            </h1> */}
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation (True Center column) */}
+          <div className="hidden lg:flex items-center justify-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium"
+                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm"
               >
                 {item.label}
               </button>
             ))}
           </div>
 
-          {/* Desktop Social Links */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Desktop Social Links (Right column) */}
+          <div className="hidden lg:flex items-center justify-end space-x-2">
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-300 hover:text-white"
+              className="text-gray-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-lg transition-colors"
               asChild
             >
               <a
                 href="https://github.com/aitaouss"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -74,20 +72,21 @@ export default function Header(): JSX.Element {
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-300 hover:text-white"
+              className="text-gray-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-lg transition-colors"
               asChild
             >
               <a
                 href="https://www.linkedin.com/in/aimen-taoussi/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
             </Button>
             <Button
               size="sm"
-              className="btn-modern bg-white hover:bg-gray-200 text-black"
+              className="btn-modern bg-white hover:bg-gray-100 text-black font-medium h-9 px-4 ml-1 transition-all"
               onClick={() => scrollToSection("contact")}
             >
               <Mail className="w-4 h-4 mr-2" />
@@ -96,16 +95,19 @@ export default function Header(): JSX.Element {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-gray-300 hover:text-white transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          <div className="flex lg:hidden justify-end">
+            <button
+              className="text-gray-300 hover:text-white transition-colors p-1"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
@@ -125,7 +127,7 @@ export default function Header(): JSX.Element {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-300 hover:text-white"
+                  className="text-gray-300 hover:text-white hover:bg-white/10"
                   asChild
                 >
                   <a
@@ -140,7 +142,7 @@ export default function Header(): JSX.Element {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-300 hover:text-white"
+                  className="text-gray-300 hover:text-white hover:bg-white/10"
                   asChild
                 >
                   <a

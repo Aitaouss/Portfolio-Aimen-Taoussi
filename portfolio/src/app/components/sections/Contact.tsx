@@ -1,28 +1,39 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "../ui/button";
-import { Mail, Linkedin, Github, MapPin, Phone } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Check, Copy } from "lucide-react";
 
 export default function Contact(): JSX.Element {
+  const [copied, setCopied] = useState(false);
+  const email = "taoussi.aimen@gmail.com";
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // fallback
+    }
+  };
+
   return (
     <section
       id="contact"
       className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
+      {/* Background Subtle Grid Texture */}
+      <div className="absolute inset-0 z-0 bg-dot-subtle opacity-30"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none"></div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 max-w-4xl">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-responsive-lg font-bold text-white mb-4 animate-slide-up">
             Let's Work Together
           </h2>
           <p
-            className="text-gray-200 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
+            className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             Full-stack developer and{" "}
@@ -31,55 +42,66 @@ export default function Contact(): JSX.Element {
             combining resilient architecture with modern, intuitive interfaces.
             Passionate about innovation, turning complex ideas into polished,
             scalable digital products.
-          </p>{" "}
+          </p>
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10">
+          {/* Email card with tactile Click-to-copy */}
           <div
-            className=" glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
+            onClick={handleCopy}
+            className="group cursor-pointer bg-gray-900/60 border border-gray-800 hover:border-gray-600 transition-all duration-300 p-6 sm:p-7 rounded-2xl flex flex-col items-center text-center relative overflow-hidden"
           >
-            <Mail className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
-              Email
+            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <Mail className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="text-white font-medium text-base mb-1 flex items-center gap-2">
+              Email Address
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-gray-300 group-hover:bg-white group-hover:text-black transition-colors">
+                {copied ? "Copied!" : "Click to copy"}
+              </span>
             </h3>
-            <p className="text-gray-300 text-xs sm:text-sm">
-              taoussi.aimen@gmail.com
+            <p className="text-gray-400 font-mono text-xs sm:text-sm flex items-center gap-1.5 mt-1">
+              <span>{email}</span>
+              {copied ? (
+                <Check className="w-3.5 h-3.5 text-emerald-400 inline" />
+              ) : (
+                <Copy className="w-3.5 h-3.5 text-gray-500 group-hover:text-white transition-colors inline" />
+              )}
             </p>
           </div>
 
-          <div
-            className="glass text-center p-6 sm:p-8 rounded-2xl animate-slide-up"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <MapPin className="w-8 h-8 sm:w-8 sm:h-8 text-white mx-auto mb-4" />
-            <h3 className="text-white font-semibold text-lg sm:text-lg mb-2">
-              Location
-            </h3>
-            <p className="text-gray-300 text-xs sm:text-sm">Morocco</p>
+          <div className="bg-gray-900/60 border border-gray-800 p-6 sm:p-7 rounded-2xl flex flex-col items-center text-center">
+            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-3">
+              <MapPin className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="text-white font-medium text-base mb-1">Location</h3>
+            <p className="text-gray-400 font-mono text-xs sm:text-sm mt-1">
+              Casablanca, Morocco (UTC+1)
+            </p>
           </div>
         </div>
+
         {/* CTA Buttons */}
         <div
-          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 animate-slide-up"
-          style={{ animationDelay: "1.0s" }}
+          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-slide-up"
+          style={{ animationDelay: "0.6s" }}
         >
           <Button
             size="lg"
-            className="btn-modern bg-white hover:bg-gray-200 text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto"
+            className="btn-modern bg-white hover:bg-gray-200 text-black font-semibold px-8 py-3.5 text-sm sm:text-base h-auto"
             asChild
           >
-            <a href="mailto:taoussi.aimen@gmail.com">
-              <Mail className="w-5 h-5 mr-2" />
-              Get In Touch
+            <a href={`mailto:${email}`}>
+              <Mail className="w-4 h-4 mr-2" />
+              Send an Email
             </a>
           </Button>
 
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto bg-transparent"
+            className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:text-black hover:border-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto bg-transparent transition-all"
             asChild
           >
             <a
@@ -87,15 +109,15 @@ export default function Contact(): JSX.Element {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn Profile
+              <Linkedin className="w-4 h-4 mr-2" />
+              LinkedIn
             </a>
           </Button>
 
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-8 py-4 text-sm sm:text-base h-auto bg-transparent"
+            className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:text-black hover:border-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto bg-transparent transition-all"
             asChild
           >
             <a
@@ -103,8 +125,8 @@ export default function Contact(): JSX.Element {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="w-5 h-5 mr-2" />
-              GitHub Profile
+              <Github className="w-4 h-4 mr-2" />
+              GitHub
             </a>
           </Button>
         </div>

@@ -329,7 +329,7 @@ export default function Projects(): JSX.Element {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="btn-modern border-gray-700 text-gray-300 hover:border-white hover:text-black flex-1 bg-transparent"
+                      className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:border-white hover:text-black flex-1 bg-transparent transition-all"
                       asChild
                     >
                       <a
@@ -362,7 +362,7 @@ export default function Projects(): JSX.Element {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="btn-modern border-gray-700 text-gray-300 hover:border-white hover:text-black flex-1 bg-transparent"
+                      className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:border-white hover:text-black flex-1 bg-transparent transition-all"
                       asChild
                     >
                       <a

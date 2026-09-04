@@ -7,36 +7,32 @@ import type { JSX } from "react";
 
 export default function Hero(): JSX.Element {
   return (
-    <section className="min-h-screen flex items-center justify-center gradient-red-black relative overflow-hidden pt-10 sm:pt-24 lg:pt-0">
-      {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-gray-500/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
+    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+      {/* Engineered Technical Background */}
+      <div className="absolute inset-0 z-0 bg-dot-subtle opacity-40"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/[0.03] via-transparent to-black pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="text-center">
           {/* Availability Badge */}
-          <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 text-xs sm:text-sm font-medium animate-slide-up">
+          <div className="mb-8 inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-950/30 text-emerald-300 text-xs font-mono tracking-tight animate-slide-up">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span>Available for new projects</span>
+            <span>Available for new projects & roles</span>
           </div>
 
-          {/* Profile Image */}
-          <div className="mb-8 sm:mb-12 relative z-20">
+          {/* Profile Image with subtle engineered ring */}
+          <div className="mb-8 relative z-20">
             <div className="relative inline-block">
-              <img
-                src="/AImenTaoussi.png"
-                alt="Aimen Taoussi"
-                className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full mx-auto border-4 border-white shadow-2xl animate-glow relative z-20"
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-transparent z-10"></div>
+              <div className="p-1 rounded-full bg-gradient-to-b from-white/20 to-white/5 shadow-2xl">
+                <img
+                  src="/AImenTaoussi.png"
+                  alt="Aimen Taoussi"
+                  className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
@@ -55,16 +51,20 @@ export default function Hero(): JSX.Element {
 
             {/* Info Tags */}
             <div
-              className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 lg:gap-8 text-xs sm:text-sm lg:text-base text-gray-300 mb-6 sm:mb-8 lg:mb-12 animate-slide-up"
+              className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-gray-300 mb-6 sm:mb-8 animate-slide-up"
               style={{ animationDelay: "0.4s" }}
             >
-              <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
-                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-                <span>1337 - 42 School Student</span>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+                <MapPin className="w-3.5 h-3.5 text-gray-400" />
+                <span>1337 Coding School (42 Network)</span>
               </div>
-              <div className="flex items-center gap-2 glass px-3 py-2 sm:px-4 sm:py-2 rounded-full">
-                {/* <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-white" /> */}
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
                 <span>Software Engineer</span>
+              </div>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/60"></span>
+                <span>Casablanca, Morocco</span>
               </div>
             </div>
 
@@ -109,7 +109,7 @@ export default function Hero(): JSX.Element {
               <Button
                 variant="outline"
                 size="lg"
-                className="btn-modern border-white text-white hover:bg-white hover:text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
+                className="btn-modern border-white/20 text-white hover:bg-white hover:text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
                 asChild
               >
                 <a href="Aimen-Taoussi-CV.pdf" download>
@@ -119,13 +119,6 @@ export default function Hero(): JSX.Element {
               </Button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10 hidden sm:block">
-        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-2 sm:h-3 bg-white rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
