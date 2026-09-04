@@ -8,23 +8,26 @@ export default function Footer(): JSX.Element {
           {/* Social Links */}
           <div className="flex space-x-6">
             <a
-              href="https://github.com/Redx-at"
+              href="https://github.com/aitaouss"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://www.linkedin.com/in/aimen-taoussi-251684280/"
+              href="https://www.linkedin.com/in/aimen-taoussi/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:taoussi.aimen@gmail.com"
+              aria-label="Send Email"
               className="text-gray-400 hover:text-white transition-colors duration-300"
             >
               <Mail className="w-6 h-6" />

@@ -19,6 +19,15 @@ export default function Hero(): JSX.Element {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
+          {/* Availability Badge */}
+          <div className="mb-6 sm:mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 text-xs sm:text-sm font-medium animate-slide-up">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Available for new projects</span>
+          </div>
+
           {/* Profile Image */}
           <div className="mb-8 sm:mb-12 relative z-20">
             <div className="relative inline-block">

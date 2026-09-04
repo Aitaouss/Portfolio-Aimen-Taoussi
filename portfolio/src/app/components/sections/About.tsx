@@ -48,26 +48,26 @@ export default function About(): JSX.Element {
   const experiences = [
     {
       icon: <Code className="w-12 h-12 sm:w-16 sm:h-16 text-white" />,
-      title: "Development",
-      duration: "2 Years Experience",
+      title: "Full-Stack Development",
+      duration: "4+ Years Experience",
       description:
-        "Specialized in modern web technologies including React, Next.js, and Node.js. Building scalable applications with clean, maintainable code.",
+        "Specialized in modern web technologies including React, Next.js, TypeScript, and Node.js/NestJS. Building scalable applications with clean, maintainable code.",
       delay: "0.2s",
     },
     {
       icon: <Palette className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400" />,
       title: "Graphic Design",
-      duration: "4 Years Experience",
+      duration: "4+ Years Experience",
       description:
-        "Creating compelling visual identities, logos, and marketing materials. Expert in Adobe Creative Suite and brand development.",
+        "Creating compelling visual identities, brand guidelines, and digital marketing assets. Expert in Adobe Creative Suite and visual brand strategy.",
       delay: "0.4s",
     },
     {
       icon: <Layers className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" />,
       title: "UI/UX Design",
-      duration: "2 Years Experience",
+      duration: "5+ Years Experience",
       description:
-        "Designing user-centered interfaces with focus on usability and accessibility. Proficient in Figma, user research, and prototyping.",
+        "Designing user-centered interfaces with focus on usability, accessibility, and design systems. Proficient in Figma, interactive prototyping, and user journeys.",
       delay: "0.6s",
     },
   ];

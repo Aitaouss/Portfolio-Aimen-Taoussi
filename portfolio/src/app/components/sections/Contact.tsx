@@ -25,13 +25,12 @@ export default function Contact(): JSX.Element {
             className="text-gray-200 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Développeur full-stack et{" "}
-            <span className="text-white font-semibold">ingénieur logiciel</span>{" "}
-            avec expertise UI/UX. Je conçois et développe des applications web
-            performantes, en combinant des architectures robustes avec des
-            interfaces modernes et intuitives. Passionné par l’innovation, je
-            transforme des concepts complexes en solutions digitales élégantes
-            et efficaces.
+            Full-stack developer and{" "}
+            <span className="text-white font-semibold">software engineer</span>{" "}
+            with UI/UX expertise. I build high-performance web applications,
+            combining resilient architecture with modern, intuitive interfaces.
+            Passionate about innovation, turning complex ideas into polished,
+            scalable digital products.
           </p>{" "}
         </div>
 
