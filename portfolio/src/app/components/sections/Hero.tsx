@@ -66,7 +66,7 @@ export default function Hero(): JSX.Element {
             >
               Passionate full-stack developer with{" "}
               <span className="text-white font-semibold">
-                2 years of development experience
+                4 years of development experience
               </span>
               ,{" "}
               <span className="text-white font-semibold">
@@ -74,7 +74,7 @@ export default function Hero(): JSX.Element {
               </span>
               , and{" "}
               <span className="text-white font-semibold">
-                2 years in UI/UX design
+                5 years in UI/UX design
               </span>
               . I create beautiful, functional digital experiences from concept
               to deployment.
