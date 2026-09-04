@@ -1,11 +1,66 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
-import { MapPin, Calendar, Download, Eye } from "lucide-react";
+import { MapPin, Download, Eye, ChevronDown, Languages } from "lucide-react";
 
 import type { JSX } from "react";
 
+const CV_FILES = {
+  en: {
+    href: "/Aimen_Taoussi_cv_en.pdf",
+    filename: "Aimen_Taoussi_CV_EN.pdf",
+    label: "English",
+  },
+  fr: {
+    href: "/Aimen-Taoussi-CV.pdf",
+    filename: "Aimen_Taoussi_CV_FR.pdf",
+    label: "French",
+  },
+} as const;
+
+function downloadFile(href: string, filename: string): void {
+  const link = document.createElement("a");
+  link.href = href;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 export default function Hero(): JSX.Element {
+  const [cvMenuOpen, setCvMenuOpen] = useState(false);
+  const cvMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!cvMenuOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        cvMenuRef.current &&
+        !cvMenuRef.current.contains(event.target as Node)
+      ) {
+        setCvMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [cvMenuOpen]);
+
+  const handleDownload = (language: "en" | "fr" | "both") => {
+    if (language === "both") {
+      downloadFile(CV_FILES.en.href, CV_FILES.en.filename);
+      setTimeout(() => {
+        downloadFile(CV_FILES.fr.href, CV_FILES.fr.filename);
+      }, 350);
+    } else {
+      const cv = CV_FILES[language];
+      downloadFile(cv.href, cv.filename);
+    }
+    setCvMenuOpen(false);
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden pt-20 sm:pt-24 lg:pt-0">
       {/* Engineered Technical Background */}
@@ -106,17 +161,64 @@ export default function Hero(): JSX.Element {
                 <Eye className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Work
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="btn-modern border-white/20 text-white hover:bg-white hover:text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
-                asChild
-              >
-                <a href="Aimen-Taoussi-CV.pdf" download>
+              <div className="relative w-full sm:w-auto" ref={cvMenuRef}>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="btn-modern border-white/20 text-white hover:bg-white hover:text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 text-sm sm:text-base lg:text-lg h-auto bg-transparent w-full sm:w-auto"
+                  onClick={() => setCvMenuOpen((open) => !open)}
+                  aria-expanded={cvMenuOpen}
+                  aria-haspopup="menu"
+                >
                   <Download className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                   Download CV
-                </a>
-              </Button>
+                  <ChevronDown
+                    className={`w-4 h-4 ml-2 transition-transform duration-200 ${
+                      cvMenuOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </Button>
+
+                {cvMenuOpen && (
+                  <div
+                    role="menu"
+                    className="absolute left-1/2 sm:left-auto sm:right-0 -translate-x-1/2 sm:translate-x-0 top-[calc(100%+0.5rem)] z-50 w-56 rounded-xl border border-white/10 bg-gray-950/95 backdrop-blur-md shadow-2xl overflow-hidden animate-slide-up"
+                  >
+                    <div className="px-3 py-2 border-b border-white/10">
+                      <p className="text-[11px] font-mono uppercase tracking-wider text-gray-400 flex items-center gap-1.5">
+                        <Languages className="w-3 h-3" />
+                        Choose language
+                      </p>
+                    </div>
+                    <div className="p-1.5">
+                      <button
+                        role="menuitem"
+                        type="button"
+                        onClick={() => handleDownload("en")}
+                        className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-200 hover:bg-white hover:text-black transition-colors"
+                      >
+                        English
+                      </button>
+                      <button
+                        role="menuitem"
+                        type="button"
+                        onClick={() => handleDownload("fr")}
+                        className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-200 hover:bg-white hover:text-black transition-colors"
+                      >
+                        French
+                      </button>
+                      <button
+                        role="menuitem"
+                        type="button"
+                        onClick={() => handleDownload("both")}
+                        className="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-200 hover:bg-white hover:text-black transition-colors border-t border-white/10 mt-1 pt-3"
+                      >
+                        Both (EN + FR)
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
