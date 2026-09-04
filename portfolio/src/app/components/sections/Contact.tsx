@@ -21,10 +21,8 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden"
     >
-      {/* Background Subtle Grid Texture */}
-      <div className="absolute inset-0 z-0 bg-dot-subtle opacity-30"></div>
       <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none"></div>
 
       <div className="container mx-auto relative z-10 max-w-4xl">

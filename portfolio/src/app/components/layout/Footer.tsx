@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="bg-black border-t border-gray-900 py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-transparent border-t border-gray-900 py-10 sm:py-14 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-5xl">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Identity & Origin */}

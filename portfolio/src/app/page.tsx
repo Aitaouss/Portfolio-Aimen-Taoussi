@@ -7,19 +7,25 @@ import Projects from "../app/components/sections/Projects";
 import Contact from "../app/components/sections/Contact";
 import Header from "../app/components/layout/Header";
 import Footer from "../app/components/layout/Footer";
+import MouseSpotlight from "../app/components/layout/MouseSpotlight";
+import BackgroundGrid from "../app/components/layout/BackgroundGrid";
 
 export default function HomePage(): JSX.Element {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-black relative">
+      <BackgroundGrid />
+      <MouseSpotlight />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -46,7 +46,7 @@ export default function Skills(): JSX.Element {
   return (
     <section
       id="skills"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-black"
+      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
     >
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">

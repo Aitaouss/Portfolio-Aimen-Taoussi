@@ -62,9 +62,7 @@ export default function Hero(): JSX.Element {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden pt-20 sm:pt-24 lg:pt-0">
-      {/* Engineered Technical Background */}
-      <div className="absolute inset-0 z-0 bg-dot-subtle opacity-40"></div>
+    <section className="min-h-screen flex items-center justify-center bg-transparent relative overflow-hidden pt-20 sm:pt-24 lg:pt-0">
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/[0.03] via-transparent to-black pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
