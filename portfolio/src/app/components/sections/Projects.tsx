@@ -1,6 +1,5 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -151,6 +150,44 @@ export default function Projects(): JSX.Element {
       delay: "0.6s",
       liveUrl: "https://supply-chain.1337.ma/",
     },
+    {
+      title: "profita – E-commerce Profitability Dashboard",
+      description:
+        "Real-time profitability and operations dashboard for e-commerce sellers — products, inventory, orders, expenses, and true net profit in one place. Built for solo sellers and small teams with first-class support for Moroccan workflows (MAD, TVA, WhatsApp orders, CashPlus/COD invoices).",
+      tech: [
+        "Next.js",
+        "React 19",
+        "Convex",
+        "Clerk",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Recharts",
+      ],
+      image:
+        "https://i.ibb.co/4w1zkXZD/Screenshot-from-2026-09-04-17-00-32.png",
+      liveUrl: "https://profita.aitaouss.me/",
+      delay: "0.7s",
+    },
+    {
+      title: "create-stackforge-app – Full-Stack CLI Scaffolder",
+      description:
+        "Production-ready CLI that scaffolds a full-stack app with Next.js (App Router), NestJS, Prisma, PostgreSQL or SQLite, Tailwind CSS, shadcn/ui, JWT authentication, Axios, Docker, and pnpm workspaces. Supports interactive prompts and non-interactive flags, with auth flow and docker compose ready out of the box.",
+      tech: [
+        "Next.js",
+        "NestJS",
+        "Prisma",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Docker",
+        "CLI",
+      ],
+      image:
+        "https://i.ibb.co/x8JQ7Hbk/Screenshot-from-2026-09-04-17-05-56.png",
+      liveUrl: "https://www.npmjs.com/package/create-stackforge-app",
+      delay: "0.8s",
+    },
   ];
 
   return (
@@ -172,14 +209,14 @@ export default function Projects(): JSX.Element {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="card-modern bg-gray-900 border-gray-800 hover:border-white/50 overflow-hidden group animate-slide-up"
+              className="card-modern bg-gray-900 border-gray-800 hover:border-white/50 overflow-hidden group animate-slide-up flex flex-col h-full"
               style={{ animationDelay: project.delay }}
             >
-              <div className="aspect-video overflow-hidden relative">
+              <div className="aspect-video overflow-hidden relative shrink-0">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -188,17 +225,17 @@ export default function Projects(): JSX.Element {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
-              <CardHeader className="pb-4">
-                <CardTitle className="text-white text-lg sm:text-xl group-hover:text-gray-300 transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
+              <div className="flex flex-1 flex-col p-6">
+                <CardHeader className="p-0 pb-4">
+                  <CardTitle className="text-white text-lg sm:text-xl group-hover:text-gray-300 transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
 
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2 justify-between">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <Badge
                       key={tech}
@@ -210,7 +247,7 @@ export default function Projects(): JSX.Element {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-2">
+                <div className="mt-auto flex gap-3 pt-6">
                   {project.githubUrl && (
                     <Button
                       size="sm"
@@ -262,7 +299,7 @@ export default function Projects(): JSX.Element {
                     </Button>
                   )}
                 </div>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
