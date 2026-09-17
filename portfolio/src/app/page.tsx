@@ -12,7 +12,7 @@ import BackgroundGrid from "../app/components/layout/BackgroundGrid";
 
 export default function HomePage(): JSX.Element {
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-mesh-deep relative">
       <BackgroundGrid />
       <MouseSpotlight />
       <div className="relative z-10">
