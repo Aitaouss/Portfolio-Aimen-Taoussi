@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { Mail, Linkedin, Github, MapPin, Check, Copy } from "lucide-react";
+import SectionHeader from "../layout/SectionHeader";
+import { Stagger, StaggerItem } from "../motion/Stagger";
 
 export default function Contact(): JSX.Element {
   const [copied, setCopied] = useState(false);
@@ -21,73 +23,68 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden"
+      className="relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 border-t border-white/[0.06] overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none"></div>
+      <div
+        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-white/[0.02] to-transparent"
+        aria-hidden
+      />
 
       <div className="container mx-auto relative z-10 max-w-4xl">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-responsive-lg font-bold text-white mb-4 animate-slide-up">
-            Let's Work Together
-          </h2>
-          <p
-            className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Full-stack developer and{" "}
-            <span className="text-white font-semibold">software engineer</span>{" "}
-            with UI/UX expertise. I build high-performance web applications,
-            combining resilient architecture with modern, intuitive interfaces.
-            Passionate about innovation, turning complex ideas into polished,
-            scalable digital products.
-          </p>
-        </div>
+        <SectionHeader
+          label="Contact"
+          title="Let's build something"
+          description="Open to freelance projects, collaborations, and full-time roles. Reach out — I usually reply within 24 hours."
+        />
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10">
-          {/* Email card with tactile Click-to-copy */}
-          <div
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-10">
+          <StaggerItem>
+          <button
+            type="button"
             onClick={handleCopy}
-            className="group cursor-pointer bg-gray-900/60 border border-gray-800 hover:border-gray-600 transition-all duration-300 p-6 sm:p-7 rounded-2xl flex flex-col items-center text-center relative overflow-hidden"
+            className="group cursor-pointer border-surface rounded-2xl bg-white/[0.02] backdrop-blur-sm hover:border-white/20 transition-all duration-300 p-6 sm:p-7 flex flex-col items-start text-left w-full"
           >
-            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
               <Mail className="w-5 h-5 text-white" />
             </div>
-            <h3 className="text-white font-medium text-base mb-1 flex items-center gap-2">
-              Email Address
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-gray-300 group-hover:bg-white group-hover:text-black transition-colors">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <h3 className="text-white font-medium text-base">Email</h3>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-neutral-300 group-hover:bg-white group-hover:text-black transition-colors">
                 {copied ? "Copied!" : "Click to copy"}
               </span>
-            </h3>
-            <p className="text-gray-400 font-mono text-xs sm:text-sm flex items-center gap-1.5 mt-1">
+            </div>
+            <p className="text-neutral-400 font-mono text-xs sm:text-sm flex items-center gap-1.5">
               <span>{email}</span>
               {copied ? (
-                <Check className="w-3.5 h-3.5 text-emerald-400 inline" />
+                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
               ) : (
-                <Copy className="w-3.5 h-3.5 text-gray-500 group-hover:text-white transition-colors inline" />
+                <Copy className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white transition-colors shrink-0" />
               )}
             </p>
-          </div>
+          </button>
+          </StaggerItem>
 
-          <div className="bg-gray-900/60 border border-gray-800 p-6 sm:p-7 rounded-2xl flex flex-col items-center text-center">
-            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-3">
+          <StaggerItem>
+          <div className="border-surface rounded-2xl bg-white/[0.02] backdrop-blur-sm p-6 sm:p-7 flex flex-col items-start text-left h-full">
+            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
               <MapPin className="w-5 h-5 text-white" />
             </div>
-            <h3 className="text-white font-medium text-base mb-1">Location</h3>
-            <p className="text-gray-400 font-mono text-xs sm:text-sm mt-1">
-              Casablanca, Morocco (UTC+1)
+            <h3 className="text-white font-medium text-base mb-2">Location</h3>
+            <p className="text-neutral-400 font-mono text-xs sm:text-sm">
+              Casablanca, Morocco · UTC+1
             </p>
           </div>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
-        {/* CTA Buttons */}
-        <div
-          className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-slide-up"
-          style={{ animationDelay: "0.6s" }}
+        <Stagger
+          className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4"
+          stagger={0.07}
         >
+          <StaggerItem>
           <Button
             size="lg"
-            className="btn-modern bg-white hover:bg-gray-200 text-black font-semibold px-8 py-3.5 text-sm sm:text-base h-auto"
+            className="btn-modern rounded-full bg-white hover:bg-neutral-100 text-neutral-950 font-semibold px-8 py-3.5 text-sm sm:text-base h-auto w-full sm:w-auto"
             asChild
           >
             <a href={`mailto:${email}`}>
@@ -95,11 +92,13 @@ export default function Contact(): JSX.Element {
               Send an Email
             </a>
           </Button>
+          </StaggerItem>
 
+          <StaggerItem>
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:text-black hover:border-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto bg-transparent transition-all"
+            className="btn-modern rounded-full border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto w-full sm:w-auto backdrop-blur-sm"
             asChild
           >
             <a
@@ -111,11 +110,13 @@ export default function Contact(): JSX.Element {
               LinkedIn
             </a>
           </Button>
+          </StaggerItem>
 
+          <StaggerItem>
           <Button
             variant="outline"
             size="lg"
-            className="btn-modern border-gray-700 text-gray-300 hover:bg-white hover:text-black hover:border-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto bg-transparent transition-all"
+            className="btn-modern rounded-full border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white font-medium px-6 py-3.5 text-sm sm:text-base h-auto w-full sm:w-auto backdrop-blur-sm"
             asChild
           >
             <a
@@ -127,7 +128,8 @@ export default function Contact(): JSX.Element {
               GitHub
             </a>
           </Button>
-        </div>
+          </StaggerItem>
+        </Stagger>
       </div>
     </section>
   );

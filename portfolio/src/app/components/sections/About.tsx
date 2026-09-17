@@ -1,19 +1,13 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 import { Code, Palette, Layers } from "lucide-react";
 import type React from "react";
+import SectionHeader from "../layout/SectionHeader";
+import { Stagger, StaggerItem } from "../motion/Stagger";
 
 interface ExperienceCardProps {
   icon: React.ReactNode;
   title: string;
   duration: string;
   description: string;
-  delay: string;
 }
 
 function ExperienceCard({
@@ -21,81 +15,65 @@ function ExperienceCard({
   title,
   duration,
   description,
-  delay,
 }: ExperienceCardProps): JSX.Element {
   return (
-    <Card
-      className="!bg-white/10 !text-white border-gray-800 hover:border-white/50 animate-slide-up"
-      style={{ animationDelay: delay }}
-    >
-      <CardHeader className="text-center">
-        <div className="flex justify-center mb-4">{icon}</div>
-        <CardTitle className=" text-xl sm:text-2xl">{title}</CardTitle>
-        <CardDescription className=" font-semibold text-sm sm:text-base">
-          {duration}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="!text-white/80 text-center leading-relaxed text-sm sm:text-base">
-          {description}
-        </p>
-      </CardContent>
-    </Card>
+    <article className="border-surface rounded-2xl bg-white/[0.02] backdrop-blur-sm p-6 sm:p-7 hover:border-white/20 transition-all duration-300 text-left h-full flex flex-col">
+      <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-1">{title}</h3>
+      <p className="text-xs font-mono text-emerald-400/90 mb-4">{duration}</p>
+      <p className="text-neutral-400 text-sm sm:text-base leading-relaxed flex-1">
+        {description}
+      </p>
+    </article>
   );
 }
 
 export default function About(): JSX.Element {
   const experiences = [
     {
-      icon: <Code className="w-12 h-12 sm:w-16 sm:h-16 text-white" />,
+      icon: <Code className="w-5 h-5 text-white" />,
       title: "Full-Stack Development",
-      duration: "4+ Years Experience",
+      duration: "3+ years",
       description:
-        "Specialized in modern web technologies including React, Next.js, TypeScript, and Node.js/NestJS. Building scalable applications with clean, maintainable code.",
-      delay: "0.2s",
+        "React, Next.js, TypeScript, and Node.js/NestJS — scalable apps with clean architecture and production-ready delivery.",
     },
     {
-      icon: <Palette className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400" />,
+      icon: <Palette className="w-5 h-5 text-neutral-300" />,
       title: "Graphic Design",
-      duration: "4+ Years Experience",
+      duration: "4+ years",
       description:
-        "Creating compelling visual identities, brand guidelines, and digital marketing assets. Expert in Adobe Creative Suite and visual brand strategy.",
-      delay: "0.4s",
+        "Visual identity, brand systems, and marketing assets with Adobe Creative Suite and consistent brand strategy.",
     },
     {
-      icon: <Layers className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300" />,
+      icon: <Layers className="w-5 h-5 text-neutral-300" />,
       title: "UI/UX Design",
-      duration: "5+ Years Experience",
+      duration: "5+ years",
       description:
-        "Designing user-centered interfaces with focus on usability, accessibility, and design systems. Proficient in Figma, interactive prototyping, and user journeys.",
-      delay: "0.6s",
+        "User-centered interfaces, Figma prototypes, design systems, and flows built for usability and clarity.",
     },
   ];
 
   return (
     <section
       id="about"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
+      className="relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 border-t border-white/[0.06]"
     >
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-responsive-lg font-bold text-white mb-4 animate-slide-up">
-            About Me
-          </h2>
-          <p
-            className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Combining technical expertise with creative vision to deliver
-            exceptional digital experiences
-          </p>
-        </div>
+        <SectionHeader
+          label="About"
+          title="Engineering meets design"
+          description="I build products end to end — from system design and APIs to interfaces people actually enjoy using."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {experiences.map((experience, index) => (
-            <ExperienceCard key={index} {...experience} />
+            <StaggerItem key={index} className="h-full">
+              <ExperienceCard {...experience} />
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

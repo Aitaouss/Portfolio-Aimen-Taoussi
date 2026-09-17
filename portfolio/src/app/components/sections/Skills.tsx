@@ -1,98 +1,74 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { Globe, Server, Database, Palette } from "lucide-react";
-import type React from "react"; // Added import for React
+import type React from "react";
+import SectionHeader from "../layout/SectionHeader";
+import { Stagger, StaggerItem } from "../motion/Stagger";
 
 interface SkillCategory {
   icon: React.ReactNode;
   title: string;
   skills: string[];
-  color: string;
-  delay: string;
 }
 
 export default function Skills(): JSX.Element {
   const skillCategories: SkillCategory[] = [
     {
-      icon: <Globe className="w-8 h-8 text-white" />,
+      icon: <Globe className="w-5 h-5 text-white" />,
       title: "Frontend",
       skills: ["HTML", "CSS", "React", "Next.js", "Tailwind CSS"],
-      color: "text-white",
-      delay: "0.2s",
     },
     {
-      icon: <Server className="w-8 h-8 text-gray-300" />,
+      icon: <Server className="w-5 h-5 text-neutral-300" />,
       title: "Backend",
-      skills: ["Node.js", "Express", "Fastify", "Nest js"],
-      color: "text-gray-300",
-      delay: "0.4s",
+      skills: ["Node.js", "Express", "Fastify", "Nest.js"],
     },
     {
-      icon: <Database className="w-8 h-8 text-gray-400" />,
+      icon: <Database className="w-5 h-5 text-neutral-300" />,
       title: "Database",
-      skills: ["MariaDB", "PostgreSQL", "SQLite3"],
-      color: "text-gray-400",
-      delay: "0.6s",
+      skills: ["MariaDB", "PostgreSQL", "SQLite3", "Prisma"],
     },
     {
-      icon: <Palette className="w-8 h-8 text-gray-500" />,
+      icon: <Palette className="w-5 h-5 text-neutral-300" />,
       title: "Design",
-      skills: ["Graphic Design", "UI/UX Design", "Adobe Creative Suite"],
-      color: "text-gray-500",
-      delay: "0.8s",
+      skills: ["UI/UX", "Figma", "Graphic Design", "Adobe Suite"],
     },
   ];
 
   return (
     <section
       id="skills"
-      className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
+      className="relative py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 border-t border-white/[0.06]"
     >
       <div className="container mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-responsive-lg font-bold text-white mb-4 animate-slide-up">
-            Technical Skills
-          </h2>
-          <p
-            className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            A comprehensive toolkit for building modern web applications and
-            stunning designs
-          </p>
-        </div>
+        <SectionHeader
+          label="Skills"
+          title="Technical toolkit"
+          description="The stack I use to ship full-stack products — aligned with how I work in production."
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {skillCategories.map((category, index) => (
-            <Card
-              key={index}
-              className="!bg-white/10 bg-gray-900 border-gray-800 hover:border-white/50 animate-slide-up"
-              style={{ animationDelay: category.delay }}
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="flex justify-center mb-4">{category.icon}</div>
-                <CardTitle
-                  className={`text-lg sm:text-xl !text-white ${category.color}`}
-                >
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {category.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="bg-gray-800 text-gray-300 hover:bg-white hover:text-black transition-colors text-xs sm:text-sm"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <StaggerItem key={index}>
+            <article className="border-surface rounded-2xl bg-white/[0.02] backdrop-blur-sm p-6 hover:border-white/20 transition-all duration-300 text-left h-full">
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                {category.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-xs text-neutral-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );
