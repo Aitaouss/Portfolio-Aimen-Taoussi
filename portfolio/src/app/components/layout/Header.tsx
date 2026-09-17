@@ -5,9 +5,12 @@ import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { useState } from "react";
 import type { JSX } from "react/jsx-runtime";
 import Image from "next/image";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { menuPanel } from "../../lib/motion";
 
 export default function Header(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId);
@@ -25,39 +28,45 @@ export default function Header(): JSX.Element {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-dark border-b border-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="grid grid-cols-2 lg:grid-cols-3 items-center h-16 lg:h-20">
-          {/* Logo (Left column) */}
-          <div className="flex items-center justify-start">
+    <header className="fixed top-0 left-0 right-0 z-50 pt-5 px-4 sm:px-6 pointer-events-none">
+      <div className="max-w-4xl mx-auto relative pointer-events-auto">
+        <nav
+          className="flex items-center justify-between gap-3 rounded-full border border-white/10 bg-neutral-950/75 backdrop-blur-md px-4 sm:px-6 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
+          aria-label="Main"
+        >
+          <button
+            type="button"
+            onClick={() => scrollToSection("about")}
+            className="flex-shrink-0 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+            aria-label="Home"
+          >
             <Image
-              width={46}
-              height={46}
+              width={40}
+              height={40}
               src="https://i.ibb.co/yc5b56nT/Screen-Shot-2025-04-14-at-2-04-44-AM-removebg-preview.png"
-              alt="Logo"
+              alt="Aimen Taoussi logo"
               className="rounded-full"
             />
-          </div>
+          </button>
 
-          {/* Desktop Navigation (True Center column) */}
-          <div className="hidden lg:flex items-center justify-center space-x-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm"
+                className="text-neutral-400 hover:text-white transition-colors duration-200 font-medium text-sm px-3 py-1.5 rounded-full hover:bg-white/5"
               >
                 {item.label}
               </button>
             ))}
           </div>
 
-          {/* Desktop Social Links (Right column) */}
-          <div className="hidden lg:flex items-center justify-end space-x-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-lg transition-colors"
+              className="hidden sm:inline-flex text-neutral-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-full"
               asChild
             >
               <a
@@ -72,7 +81,7 @@ export default function Header(): JSX.Element {
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-lg transition-colors"
+              className="hidden sm:inline-flex text-neutral-400 hover:text-white hover:bg-white/10 h-9 w-9 p-0 rounded-full"
               asChild
             >
               <a
@@ -85,49 +94,56 @@ export default function Header(): JSX.Element {
               </a>
             </Button>
             <Button
+              variant="outline"
               size="sm"
-              className="btn-modern bg-white hover:bg-gray-100 text-black font-medium h-9 px-4 ml-1 transition-all"
+              className="hidden md:inline-flex border-white/15 bg-transparent text-neutral-200 hover:bg-white hover:text-neutral-950 hover:border-white/25 font-medium h-9 px-3.5 rounded-full"
               onClick={() => scrollToSection("contact")}
             >
-              <Mail className="w-4 h-4 mr-2" />
+              <Mail className="w-3.5 h-3.5 mr-1.5" />
               Contact
             </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden justify-end">
             <button
-              className="text-gray-300 hover:text-white transition-colors p-1"
+              type="button"
+              className="md:hidden text-neutral-300 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5" />
               )}
             </button>
           </div>
         </nav>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full glass-dark border-b border-gray-800">
-            <div className="px-4 py-6 space-y-4 bg-black bg-opacity-65">
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              key="mobile-nav"
+              className="md:hidden absolute top-[calc(100%+0.5rem)] left-0 right-0 rounded-2xl border border-white/10 bg-neutral-950/95 backdrop-blur-md shadow-2xl overflow-hidden"
+              initial={reduceMotion ? false : "hidden"}
+              animate="visible"
+              exit="exit"
+              variants={menuPanel}
+            >
+            <div className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
+                  type="button"
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-300 hover:text-white transition-colors duration-300 font-medium py-2"
+                  className="block w-full text-left text-neutral-300 hover:text-white hover:bg-white/5 transition-colors font-medium py-2.5 px-3 rounded-lg text-sm"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="flex items-center space-x-4 pt-4 border-t border-gray-700">
+              <div className="flex items-center gap-2 pt-3 mt-2 border-t border-white/10">
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-300 hover:text-white hover:bg-white/10"
+                  className="text-neutral-300 hover:text-white hover:bg-white/10 flex-1 bg-transparent"
                   asChild
                 >
                   <a
@@ -142,7 +158,7 @@ export default function Header(): JSX.Element {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-300 hover:text-white hover:bg-white/10"
+                  className="text-neutral-300 hover:text-white hover:bg-white/10 flex-1 bg-transparent"
                   asChild
                 >
                   <a
@@ -155,9 +171,19 @@ export default function Header(): JSX.Element {
                   </a>
                 </Button>
               </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full mt-2 rounded-full border-white/15 bg-white/5 text-white hover:bg-white hover:text-neutral-950 font-medium"
+                onClick={() => scrollToSection("contact")}
+              >
+                <Mail className="w-4 h-4 mr-2" />
+                Contact
+              </Button>
             </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   );
