@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Github, ExternalLink } from "lucide-react";
@@ -27,7 +22,8 @@ interface Project {
 }
 
 export default function Projects(): JSX.Element {
-  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("all");
+  const [selectedCategory, setSelectedCategory] =
+    useState<ProjectCategory>("all");
 
   const categories: { id: ProjectCategory; label: string }[] = [
     { id: "all", label: "All Projects" },
@@ -73,10 +69,11 @@ export default function Projects(): JSX.Element {
         "CLI",
       ],
       image:
-        "https://i.ibb.co/x8JQ7Hbk/Screenshot-from-2026-09-04-17-05-56.png",
+        // "https://i.ibb.co/x8JQ7Hbk/Screenshot-from-2026-09-04-17-05-56.png",
+        "https://i.ibb.co/q3R13z9y/image.png",
       category: "tools",
       badge: "npm package",
-      liveUrl: "https://www.npmjs.com/package/create-stackforge-app",
+      liveUrl: "https://stack-forge.aitaouss.me/",
       delay: "0.3s",
     },
     {
@@ -234,7 +231,8 @@ export default function Projects(): JSX.Element {
             className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg animate-slide-up mb-8"
             style={{ animationDelay: "0.2s" }}
           >
-            A curated showcase of production applications, open-source tools, and UI/UX designs.
+            A curated showcase of production applications, open-source tools,
+            and UI/UX designs.
           </p>
 
           {/* Category Filter Tabs */}
