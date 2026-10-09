@@ -224,6 +224,134 @@ html {
   ); /* Darker gray on hover */
 }
 
+/* Terminal scrollbar — scoped so the shell keeps its dark visual language. */
+.terminal-scrollbar {
+  scrollbar-color: rgba(52, 211, 153, 0.5) #0c0c0c;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(52, 211, 153, 0.68),
+    rgba(16, 185, 129, 0.3)
+  );
+  background-clip: padding-box;
+  border: 2px solid #0c0c0c;
+  border-radius: 999px;
+  min-height: 36px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 211, 153, 0.85);
+  background-clip: padding-box;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-corner {
+  background: #0c0c0c;
+}
+
+/* Desktop cursor — the native cursor remains available for text interaction. */
+.custom-cursor-dot,
+.custom-cursor-ring {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+  will-change: transform;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  z-index: 101;
+}
+
+.custom-cursor-ring {
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+}
+
+.custom-cursor-dot > span,
+.custom-cursor-ring > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  transition:
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.custom-cursor-dot > span {
+  background: rgb(52 211 153);
+  box-shadow: 0 0 10px rgb(52 211 153 / 0.55);
+}
+
+.custom-cursor-ring > span {
+  border: 1px solid rgb(110 231 183 / 0.42);
+  background: rgb(52 211 153 / 0.025);
+}
+
+.custom-cursor-dot.is-interactive > span {
+  transform: scale(0.7);
+  box-shadow: 0 0 14px rgb(52 211 153 / 0.8);
+}
+
+.custom-cursor-ring.is-interactive > span {
+  transform: scale(1.4);
+  border-color: rgb(110 231 183 / 0.7);
+  background: rgb(52 211 153 / 0.08);
+}
+
+.custom-cursor-dot.is-pressed > span {
+  transform: scale(1.25);
+}
+
+.custom-cursor-ring.is-pressed > span {
+  transform: scale(0.82);
+}
+
+.custom-cursor-ring.is-interactive.is-pressed > span {
+  transform: scale(1.08);
+}
+
+@media (pointer: fine) and (min-width: 768px) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled * {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-enabled input,
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled select,
+  html.custom-cursor-enabled [contenteditable="true"],
+  html.custom-cursor-enabled [data-native-cursor="true"],
+  html.custom-cursor-enabled [data-native-cursor="true"] * {
+    cursor: text !important;
+  }
+
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: block;
+  }
+}
+
 /* Focus styles */
 .focus-visible:focus-visible {
   outline: 2px solid hsl(var(--ring));
