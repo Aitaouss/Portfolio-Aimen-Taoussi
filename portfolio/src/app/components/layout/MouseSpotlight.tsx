@@ -12,9 +12,6 @@ export default function MouseSpotlight(): JSX.Element {
   const spotlightRef = useRef<HTMLDivElement>(null);
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const cursorRingRef = useRef<HTMLDivElement>(null);
-  const spotlightPositionRef = useRef({ x: 0, y: 0 });
-  const ringPositionRef = useRef({ x: 0, y: 0 });
-  const targetRef = useRef({ x: 0, y: 0 });
   const visibleRef = useRef(false);
 
   useEffect(() => {
@@ -30,6 +27,8 @@ export default function MouseSpotlight(): JSX.Element {
     const cursorDot = cursorDotRef.current;
     const cursorRing = cursorRingRef.current;
     let rafId = 0;
+    let pointerX = 0;
+    let pointerY = 0;
 
     root.classList.add("custom-cursor-enabled");
 
@@ -39,8 +38,27 @@ export default function MouseSpotlight(): JSX.Element {
       if (cursorRing) cursorRing.style.opacity = visible ? "1" : "0";
     };
 
-    const handleMouseMove = (event: MouseEvent): void => {
-      targetRef.current = { x: event.clientX, y: event.clientY };
+    const renderPointer = (): void => {
+      rafId = 0;
+
+      cursorDot?.style.setProperty(
+        "transform",
+        `translate3d(${pointerX - 2}px, ${pointerY - 2}px, 0)`
+      );
+      cursorRing?.style.setProperty(
+        "transform",
+        `translate3d(${pointerX - 12}px, ${pointerY - 12}px, 0)`
+      );
+
+      if (spotlight) {
+        spotlight.style.setProperty("--mouse-x", `${pointerX}px`);
+        spotlight.style.setProperty("--mouse-y", `${pointerY}px`);
+      }
+    };
+
+    const handlePointerMove = (event: PointerEvent): void => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
 
       const target = event.target;
       const element = target instanceof Element ? target : null;
@@ -51,16 +69,15 @@ export default function MouseSpotlight(): JSX.Element {
         !usesNativeCursor && element?.closest(INTERACTIVE_SELECTOR)
       );
 
-      if (!visibleRef.current && !usesNativeCursor) {
-        spotlightPositionRef.current = targetRef.current;
-        ringPositionRef.current = targetRef.current;
-      }
-
       setCursorVisible(!usesNativeCursor);
       cursorDot?.classList.toggle("is-interactive", isInteractive);
       cursorRing?.classList.toggle("is-interactive", isInteractive);
 
       if (spotlight) spotlight.style.opacity = "1";
+
+      // Coalesce pointer events into one paint per frame without adding a
+      // trailing animation. This keeps the cursor locked to the real pointer.
+      if (!rafId) rafId = requestAnimationFrame(renderPointer);
     };
 
     const handleMouseLeave = (): void => {
@@ -69,65 +86,30 @@ export default function MouseSpotlight(): JSX.Element {
       if (spotlight) spotlight.style.opacity = "0";
     };
 
-    const handleMouseDown = (): void => {
+    const handlePointerDown = (): void => {
       if (!visibleRef.current) return;
       cursorDot?.classList.add("is-pressed");
       cursorRing?.classList.add("is-pressed");
     };
 
-    const handleMouseUp = (): void => {
+    const handlePointerUp = (): void => {
       cursorDot?.classList.remove("is-pressed");
       cursorRing?.classList.remove("is-pressed");
     };
 
-    const animate = (): void => {
-      const target = targetRef.current;
-      const spotlightPosition = spotlightPositionRef.current;
-      const ringPosition = ringPositionRef.current;
-
-      spotlightPositionRef.current = {
-        x: spotlightPosition.x + (target.x - spotlightPosition.x) * 0.1,
-        y: spotlightPosition.y + (target.y - spotlightPosition.y) * 0.1,
-      };
-      ringPositionRef.current = {
-        x: ringPosition.x + (target.x - ringPosition.x) * 0.2,
-        y: ringPosition.y + (target.y - ringPosition.y) * 0.2,
-      };
-
-      if (spotlight && visibleRef.current) {
-        const { x, y } = spotlightPositionRef.current;
-        spotlight.style.setProperty("--mouse-x", `${x}px`);
-        spotlight.style.setProperty("--mouse-y", `${y}px`);
-      }
-
-      if (cursorDot) {
-        cursorDot.style.transform = `translate3d(${target.x - 3}px, ${
-          target.y - 3
-        }px, 0)`;
-      }
-
-      if (cursorRing) {
-        const { x, y } = ringPositionRef.current;
-        cursorRing.style.transform = `translate3d(${x - 15}px, ${
-          y - 15
-        }px, 0)`;
-      }
-
-      rafId = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("pointerup", handlePointerUp);
+    window.addEventListener("pointercancel", handlePointerUp);
     window.addEventListener("blur", handleMouseLeave);
     document.documentElement.addEventListener("mouseleave", handleMouseLeave);
-    rafId = requestAnimationFrame(animate);
 
     return () => {
       root.classList.remove("custom-cursor-enabled");
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("pointerup", handlePointerUp);
+      window.removeEventListener("pointercancel", handlePointerUp);
       window.removeEventListener("blur", handleMouseLeave);
       document.documentElement.removeEventListener(
         "mouseleave",
