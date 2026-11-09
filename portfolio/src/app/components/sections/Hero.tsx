@@ -17,7 +17,7 @@ const CV_FILES = {
     filename: "Aimen_Taoussi_CV_EN.pdf",
   },
   fr: {
-    href: "/Aimen-Taoussi-CV.pdf",
+    href: "/Aimen_Taoussi_cv_fr.pdf",
     filename: "Aimen_Taoussi_CV_FR.pdf",
   },
 } as const;

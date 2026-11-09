@@ -55,7 +55,7 @@ const KNOWLEDGE: KnowledgeEntry[] = [
   {
     keywords: ["cv", "resume", "download"],
     reply:
-      "Download my CV from the hero: English, French, or both PDFs. Files: Aimen_Taoussi_cv_en.pdf and Aimen-Taoussi-CV.pdf.",
+      "Download my CV from the hero: English, French, or both PDFs. Files: Aimen_Taoussi_cv_en.pdf and Aimen_Taoussi_cv_fr.pdf.",
     suggestions: ["Tech stack", "How to contact you?"],
   },
   {
