@@ -48,7 +48,8 @@ export default function Projects(): JSX.Element {
       ],
       coreTech: ["Next.js", "Convex", "Clerk", "TypeScript", "Tailwind"],
       image:
-        "https://i.ibb.co/4w1zkXZD/Screenshot-from-2026-09-04-17-00-32.png",
+        // "https://i.ibb.co/4w1zkXZD/Screenshot-from-2026-09-04-17-00-32.png",
+        "https://i.ibb.co/0pk7fgrG/image.png",
       category: "fullstack",
       badge: "Flagship",
       liveUrl: "https://profita.aitaouss.me/",
@@ -69,6 +70,22 @@ export default function Projects(): JSX.Element {
       category: "tools",
       badge: "npm package",
       liveUrl: "https://stack-forge.aitaouss.me/",
+      delay: "0.3s",
+    },
+    {
+      name: "prospectflow",
+      tagline: "Agency Outreach & CRM Automation",
+      summary:
+        "A full-stack outreach platform for managing freelance prospects, generating personalized campaigns, and tracking email and LinkedIn interactions — with a secure, rate-limited sending pipeline.",
+      highlights: [
+        "Personalized email campaigns & JSON imports",
+        "Gmail SMTP queue · Rate limiting · Safety checks",
+        "Agency CRM · LinkedIn outreach · Follow-up tracking",
+      ],
+      coreTech: ["Next.js", "Convex", "TypeScript", "Tailwind", "Nodemailer"],
+      image: "https://i.ibb.co/XkM48tk6/image.png",
+      category: "fullstack",
+      badge: "Featured",
       delay: "0.3s",
     },
     {
@@ -110,7 +127,11 @@ export default function Projects(): JSX.Element {
       tagline: "UI/UX Mobile App",
       summary:
         "End-to-end mobile UX for outdoor enthusiasts — flows, screens, and a polished visual system.",
-      highlights: ["Mobile-first journeys", "Figma design system", "Freelance delivery"],
+      highlights: [
+        "Mobile-first journeys",
+        "Figma design system",
+        "Freelance delivery",
+      ],
       coreTech: ["Figma", "UI/UX", "User Flow", "Mobile Design"],
       image: "https://i.ibb.co/SXdP0krw/image.png",
       category: "design",
@@ -123,7 +144,11 @@ export default function Projects(): JSX.Element {
       tagline: "Enterprise AI Platform Site",
       summary:
         "Marketing site for an enterprise AI product — Web3 communities, onboarding, and feature storytelling.",
-      highlights: ["Multi-language UX", "Web3 positioning", "Production landing"],
+      highlights: [
+        "Multi-language UX",
+        "Web3 positioning",
+        "Production landing",
+      ],
       coreTech: ["Vite", "Tailwind CSS", "AI / Web3", "Responsive UI"],
       image: "https://i.ibb.co/fg0Cs7f/aioxagent.png",
       category: "fullstack",
@@ -135,7 +160,11 @@ export default function Projects(): JSX.Element {
       tagline: "Corporate Website",
       summary:
         "Modern company site with Next.js 14, TypeScript, and shadcn/ui for a responsive brand presence.",
-      highlights: ["SEO-ready pages", "Shadcn/UI components", "Vercel deployment"],
+      highlights: [
+        "SEO-ready pages",
+        "Shadcn/UI components",
+        "Vercel deployment",
+      ],
       coreTech: ["Next.js 14", "TypeScript", "Tailwind", "Shadcn/UI"],
       image: "https://i.ibb.co/kgb6wDhc/image.png",
       category: "fullstack",
@@ -291,9 +320,7 @@ function ProjectCard({ project }: { project: Project }): JSX.Element {
         : null;
 
   return (
-    <Card
-      className="card-modern overflow-hidden group flex flex-col h-full bg-black dark:bg-black border border-white/[0.08] transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.08)]"
-    >
+    <Card className="card-modern overflow-hidden group flex flex-col h-full bg-black dark:bg-black border border-white/[0.08] transition-all duration-300 hover:border-white/20 hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.08)]">
       <div className="p-3 pb-0 shrink-0">
         <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black ring-1 ring-inset ring-white/5">
           <img
@@ -355,11 +382,7 @@ function ProjectCard({ project }: { project: Project }): JSX.Element {
               className="btn-modern rounded-full bg-white hover:bg-neutral-100 text-neutral-950 flex-1 font-medium h-9"
               asChild
             >
-              <a
-                href={primaryHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={primaryHref} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2 shrink-0" />
                 {primaryLabel}
               </a>
