@@ -86,6 +86,7 @@ export default function Projects(): JSX.Element {
       image: "https://i.ibb.co/XkM48tk6/image.png",
       category: "fullstack",
       badge: "Featured",
+      liveUrl: "https://prospectflow.aitaouss.me/dashboard",
       delay: "0.3s",
     },
     {
